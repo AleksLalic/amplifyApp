@@ -1,26 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react'
+import Table from './Table'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+ state = {
+    customers: [ 
+    {
+        company:'Alfreds Futterkiste',
+        contact:'Maria Anders',
+	country:'Germany',
+      },
+      {
+        company:'Berglunds snabbköp',
+        contact:'Christina Berglund',
+	country:'Sweden',
+      },
+      {
+        company:'Centro comercial Moctezuma',
+        contact:'Francisco Chang',
+	country:'Mexicao',
+      },
+      {
+        company:'Ernst Handel',
+        contact:'Rolan Mendel',
+	country:'Austria',
+      },
+    ],
+  }
+
+removeCustomer= (index) => {
+  const {customers} = this.state
+
+  this.setState({
+    customers: customers.filter((customers, i) => {
+      return i !== index
+    }),
+  })
 }
 
-export default App;
+  render() {
+ const customers= this.state.customers;
+
+    return (
+      <div className="App">
+        <Table customerData={customers} removeCustomer={this.removeCustomer} />
+      </div>
+    )
+  }
+}
+
+export default App
