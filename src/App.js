@@ -24,6 +24,11 @@ class App extends Component {
         contact:'Rolan Mendel',
 	country:'Austria',
       },
+      {
+        company:'Bryce Engineering',
+        contact:'Bruce Heywood',
+	country:'Australia',
+      },
     ],
   }
 
