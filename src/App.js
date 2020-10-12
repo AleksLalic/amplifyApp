@@ -1,35 +1,11 @@
 import React, {Component} from 'react'
 import Table from './Table'
+import AForm from './Form'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
  state = {
-    customers: [ 
-    {
-        company:'Alfreds Futterkiste',
-        contact:'Maria Anders',
-	country:'Germany',
-      },
-      {
-        company:'Berglunds snabbköp',
-        contact:'Christina Berglund',
-	country:'Sweden',
-      },
-      {
-        company:'Centro comercial Moctezuma',
-        contact:'Francisco Chang',
-	country:'Mexicao',
-      },
-      {
-        company:'Ernst Handel',
-        contact:'Rolan Mendel',
-	country:'Austria',
-      },
-      {
-        company:'Bryce Engineering',
-        contact:'Bruce Heywood',
-	country:'Australia',
-      },
-    ],
+    customers: [],
   }
 
 removeCustomer= (index) => {
@@ -42,12 +18,18 @@ removeCustomer= (index) => {
   })
 }
 
+handleSubmit = (customer) => {
+  this.setState({customers: [...this.state.customers, customer]})
+}
+
   render() {
  const customers= this.state.customers;
 
     return (
       <div className="App">
         <Table customerData={customers} removeCustomer={this.removeCustomer} />
+<br />
+     <AForm handleSubmit={this.handleSubmit} />
       </div>
     )
   }
