@@ -31,6 +31,7 @@ render() {
 
   return (
 	<Container>
+
 <Alert variant="secondary">
   <Alert.Heading>Add new customer</Alert.Heading>
   </Alert>

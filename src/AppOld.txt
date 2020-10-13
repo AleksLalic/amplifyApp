@@ -2,11 +2,12 @@ import React, {Component,useEffect,useState} from 'react'
 import Table from './Table'
 import AForm from './Form'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { API} from 'aws-amplify';
+import { API, Amplify } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listCustomers } from './graphql/queries';
 import { createCustomer as createCustomerMutation, deleteCustomer as deleteCustomerMutation } from './graphql/mutations';
 
+import awsconfig from './aws-exports'; 
 
 class App extends Component {
  state = {
@@ -59,4 +60,4 @@ handleSubmit = (customer) => {
   }
 }
 
-export default withAuthenticator(App);
+export default withAuthenticator(App,True);

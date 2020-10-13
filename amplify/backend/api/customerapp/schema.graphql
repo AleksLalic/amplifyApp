@@ -1,0 +1,6 @@
+type Customer @model {
+  id: ID!
+  contact: String!
+  company: String!
+  country:String!
+}
