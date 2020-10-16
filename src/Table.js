@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Button } from 'react-bootstrap';
 
 const TableHeader = () => {
   return (
@@ -13,6 +14,7 @@ const TableHeader = () => {
   )
 }
 const TableBody = (props) => {
+ 
 const rows = props.customerData.map((row, index)=>{
   return (
   <tr key={index}>
@@ -20,7 +22,9 @@ const rows = props.customerData.map((row, index)=>{
     <td>{row.contact}</td>
     <td>{row.country}</td>
  <td>
-    <button class="button" onClick={() => props.removeCustomer(index)}>Delete</button>
+ <Button variant="primary" type="button" onClick={() => props.removeCustomer(row)}>
+   		 Delete
+  	</Button>
   </td>
   </tr>
   )

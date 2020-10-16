@@ -3,7 +3,7 @@ import { Form } from 'react-bootstrap';
 import { Container} from 'react-bootstrap';
 import { Alert } from 'react-bootstrap';
 
-import { Button } from 'react-bootstrap';
+import { Button, Row, Col } from 'react-bootstrap';
 
 
 class AForm extends Component {
@@ -38,24 +38,39 @@ render() {
     <Form>
 	<Form.Group>
 	<Form.Row>
+    <Col sm={2}>
 	 <Form.Label>Company</Form.Label>
+   </Col>
+   <Col sm={4}>
   	<Form.Control type="text" name="company" id="company" placeholder="Company" value={company}
         onChange={this.handleChange}/>
+        </Col>
   	</Form.Row>
+    <br />
         <Form.Row>
+        <Col sm={2}>
 	 <Form.Label>Contact</Form.Label>
+   </Col>
+   <Col sm={4}>
   	<Form.Control type="text" name="contact" id="contact" placeholder="Contact"  value={contact}
         onChange={this.handleChange}/>
+        </Col>
   	</Form.Row>
+    <br />
         <Form.Row>
+        <Col sm={2}>
 	 <Form.Label>Country</Form.Label>
+   </Col>
+   <Col sm={4}>
   	<Form.Control type="text" name="country" id="country"  placeholder="Country" value={country}
         onChange={this.handleChange} />
+        </Col>
 	</Form.Row>
     	</Form.Group>
 	<Button variant="primary" type="button" onClick={this.submitForm}>
    		 Submit
   	</Button>
+   
 	</Form>
 	</Container>
    

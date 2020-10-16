@@ -4,11 +4,19 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'react-bootstrap/dist/react-bootstrap';
-import Amplify from 'aws-amplify';
-import config from './aws-exports';
-Amplify.configure(config);
-Amplify.Logger.LOG_LEVEL = 'DEBUG';
+import Amplify, { Auth, API } from 'aws-amplify';
+import awsconfig from './aws-exports';
 
+
+Amplify.configure(awsconfig);
+API.configure(awsconfig);
+
+// >>New - Configuring Auth Module
+const cfg = Auth.configure(awsconfig);
+
+
+
+//console.log(cfg);
 ReactDOM.render(
   <React.StrictMode>
     <App />
