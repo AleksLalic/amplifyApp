@@ -8,6 +8,7 @@ export const getCustomer = /* GraphQL */ `
       contact
       company
       country
+      image
       createdAt
       updatedAt
     }
@@ -25,6 +26,7 @@ export const listCustomers = /* GraphQL */ `
         contact
         company
         country
+        image
         createdAt
         updatedAt
       }

@@ -3,4 +3,5 @@ type Customer @model {
   contact: String!
   company: String!
   country:String!
+  image:String
 }

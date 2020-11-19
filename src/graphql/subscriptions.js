@@ -8,6 +8,7 @@ export const onCreateCustomer = /* GraphQL */ `
       contact
       company
       country
+      image
       createdAt
       updatedAt
     }
@@ -20,6 +21,7 @@ export const onUpdateCustomer = /* GraphQL */ `
       contact
       company
       country
+      image
       createdAt
       updatedAt
     }
@@ -32,6 +34,7 @@ export const onDeleteCustomer = /* GraphQL */ `
       contact
       company
       country
+      image
       createdAt
       updatedAt
     }
